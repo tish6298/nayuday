@@ -1,20 +1,11 @@
-function showConfetti() {
-    console.log("Celebrate button clicked!"); // Debug message
+function showQRCode() {
+    // The path to your QR code image stored in the repository
+    let qrCodePath = "./qr-code-image.png"; // Replace with the exact file path of your QR code
 
-    let confettiColors = ['#ff69b4', '#ff1493', '#ff6347', '#ffa500', '#32cd32', '#1e90ff', '#8a2be2'];
-    let container = document.querySelector('.container');
-
-    for (let i = 0; i < 200; i++) {
-        let confetti = document.createElement('div');
-        confetti.classList.add('confetti');
-        confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
-        confetti.style.left = `${Math.random() * 100}vw`;
-        confetti.style.animationDelay = `${Math.random() * 2}s`;
-        container.appendChild(confetti);
-    }
-
-    // Confetti lasts for 5 seconds
-    setTimeout(() => {
-        document.querySelectorAll('.confetti').forEach(c => c.remove());
-    }, 5000);
+    // Display the QR code by creating an image element
+    let qrCodeDiv = document.getElementById('qr-code');
+    qrCodeDiv.innerHTML = `<img src="${qrCodePath}" alt="QR Code" width="150" height="150">`;
+    
+    // Show the QR code if hidden
+    qrCodeDiv.classList.remove('hidden');
 }
