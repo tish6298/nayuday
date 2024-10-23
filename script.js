@@ -25,7 +25,7 @@ function showQRCode() {
     
     // Create an image element for the QR code
     const qrCodeImage = document.createElement('img');
-    qrCodeImage.src = 'path/to/your-qr-code.png'; // Replace with the actual path to your QR code image
+    qrCodeImage.src = 'qr-code-image.png'; // Replace with the actual path to your QR code image
     qrCodeImage.alt = 'QR Code for Nayu\'s birthday';
     
     // Clear any existing content in the QR code container and append the new image
