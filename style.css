@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #ffe6e6;
+    background-color: #ffe6e6; /* Light pink background */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,53 +14,60 @@ body {
 /* Container */
 .container {
     text-align: center;
-    background-color: #ffffff;
+    background-color: #ffffff; /* White background for the container */
     padding: 50px;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     animation: fadeIn 2s ease-in-out;
+    position: relative; /* Allow positioning of QR code */
 }
 
 /* Title */
 #birthday-message {
     font-size: 3rem;
     font-weight: bold;
-    color: #ff69b4;
-    text-shadow: 2px 2px #ffa07a;
+    color: #ff69b4; /* Hot pink color */
+    text-shadow: 2px 2px #ffa07a; /* Light salmon shadow */
     margin-bottom: 20px;
 }
 
 /* Subtext */
 .subtext {
     font-size: 1.5rem;
-    color: #8b008b;
+    color: #8b008b; /* Dark magenta */
     margin-bottom: 20px;
 }
 
 /* Button */
 button {
-    background-color: #ff1493;
+    background-color: #ff1493; /* Deep pink button */
     border: none;
     padding: 15px 30px;
     font-size: 1.2rem;
     color: white;
     border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
 }
 
 button:hover {
-    background-color: #c71585;
+    background-color: #c71585; /* Medium violet red on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
 /* QR Code */
 #qr-code {
     margin-top: 20px;
     animation: fadeIn 1s ease-in-out;
+    position: absolute; /* Position it relative to the container */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    bottom: -50px; /* Adjust position below the container */
 }
 
+/* Hidden Class */
 .hidden {
-    display: none;
+    display: none; /* Hide element */
 }
 
 /* Keyframe for fade in animation */
