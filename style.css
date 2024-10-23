@@ -1,77 +1,53 @@
-/* General Styles */
+/* General body styles */
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #ffe6e6; /* Light pink background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    overflow: hidden; /* Prevent scrolling when confetti is active */
 }
 
-/* Container */
-.container {
-    text-align: center;
-    background-color: #ffffff; /* White background for the container */
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 2s ease-in-out;
-    position: relative; /* Allow positioning of QR code */
-}
-
-/* Title */
-#birthday-message {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #ff69b4; /* Hot pink color */
-    text-shadow: 2px 2px #ffa07a; /* Light salmon shadow */
-    margin-bottom: 20px;
-}
-
-/* Subtext */
-.subtext {
-    font-size: 1.5rem;
-    color: #8b008b; /* Dark magenta */
-    margin-bottom: 20px;
-}
-
-/* Button */
-button {
-    background-color: #ff1493; /* Deep pink button */
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    color: white;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
-}
-
-button:hover {
-    background-color: #c71585; /* Medium violet red on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-}
-
-/* QR Code */
+/* Container for the QR code */
 #qr-code {
-    margin-top: 20px;
-    animation: fadeIn 1s ease-in-out;
-    position: absolute; /* Position it relative to the container */
+    position: absolute;
+    top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center horizontally */
-    bottom: -50px; /* Adjust position below the container */
+    transform: translate(-50%, -50%); /* Adjust position to center */
+    z-index: 1000; /* Ensure it's above the confetti */
+    display: none; /* Initially hidden */
 }
 
-/* Hidden Class */
-.hidden {
-    display: none; /* Hide element */
+/* Show the QR code when not hidden */
+#qr-code:not(.hidden) {
+    display: block; /* Show QR code when class 'hidden' is removed */
 }
 
-/* Keyframe for fade in animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
+/* tsParticles container styles */
+#tsparticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction with the canvas */
+    z-index: 999; /* Ensure it's below the QR code */
+}
+
+/* Button styles */
+#celebrate {
+    position: absolute;
+    bottom: 20px; /* Position at the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position to center */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001; /* Ensure button is above everything */
+}
+
+#celebrate:hover {
+    background-color: #45a049; /* Darker green on hover */
 }
