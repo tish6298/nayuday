@@ -1,0 +1,60 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffccff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container */
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Title */
+#birthday-message {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff69b4;
+    text-shadow: 2px 2px #ffa07a;
+    margin-bottom: 20px;
+}
+
+/* Subtext */
+.subtext {
+    font-size: 1.5rem;
+    color: #8b008b;
+    margin-bottom: 20px;
+}
+
+/* Button */
+button {
+    background-color: #ff1493;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c71585;
+}
+
+/* Keyframe for fade in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
