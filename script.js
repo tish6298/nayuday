@@ -1,7 +1,6 @@
-// script.js
-
-// Initialize the confetti when the window loads
+// Initialize tsParticles confetti when the window loads
 window.onload = function() {
+    // Load the confetti preset
     tsParticles.load("tsparticles", {
         preset: "confetti",
         options: {
@@ -32,12 +31,13 @@ function showQRCode() {
     qrCodeContainer.innerHTML = ''; // Clear previous content
     qrCodeContainer.appendChild(qrCodeImage);
     
-    // Trigger the confetti
+    // Trigger the confetti effect
     triggerConfetti();
 }
 
-// Trigger the confetti
+// Trigger the tsParticles confetti
 function triggerConfetti() {
+    // Load the confetti preset again to trigger the animation
     tsParticles.load("tsparticles", {
         preset: "confetti",
         options: {
