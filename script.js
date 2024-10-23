@@ -1,4 +1,6 @@
 function showConfetti() {
+    console.log("Celebrate button clicked!"); // Debug message
+
     let confettiColors = ['#ff69b4', '#ff1493', '#ff6347', '#ffa500', '#32cd32', '#1e90ff', '#8a2be2'];
     let container = document.querySelector('.container');
 
@@ -11,7 +13,8 @@ function showConfetti() {
         container.appendChild(confetti);
     }
 
+    // Confetti lasts for 5 seconds
     setTimeout(() => {
         document.querySelectorAll('.confetti').forEach(c => c.remove());
-    }, 5000); // Confetti lasts for 5 seconds
+    }, 5000);
 }
