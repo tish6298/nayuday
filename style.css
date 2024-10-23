@@ -1,7 +1,7 @@
 body {
-    background-color: #333;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
+    background-color: #333; /* Dark background */
+    font-family: 'Poppins', sans-serif; /* Font style */
+    margin: 0; /* Remove default margin */
     overflow: hidden; /* Prevent scrolling when confetti is active */
 }
 
@@ -13,17 +13,8 @@ body {
     color: white; /* Text color */
 }
 
-#tsparticles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    pointer-events: none; /* Prevent interaction with the canvas */
-}
-
 .hidden {
-    display: none;
+    display: none; /* Hide elements with this class */
 }
 
 #qr-code {
@@ -31,13 +22,13 @@ body {
 }
 
 #celebrate {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 10px 20px; /* Button padding */
+    font-size: 16px; /* Button font size */
     background-color: #4CAF50; /* Green background */
     color: white; /* White text */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
     z-index: 1001; /* Ensure button is above everything */
 }
 
