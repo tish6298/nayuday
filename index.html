@@ -6,19 +6,77 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Happy Birthday Nayu!</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Include the tsParticles library and confetti preset -->
-    <script src="https://cdn.jsdelivr.net/npm/tsParticles@1.30/dist/tsParticles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-confetti@1.30/dist/tsparticles.preset.confetti.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        #confetti-holder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allow clicks through */
+            z-index: 0; /* Behind other elements */
+        }
+        .container {
+            position: relative;
+            z-index: 1; /* Above the confetti */
+            text-align: center;
+        }
+        .hidden {
+            display: none; /* Initially hide the QR code */
+        }
+    </style>
 </head>
 <body>
-    <div id="tsparticles"></div> <!-- Confetti canvas container -->
+    <canvas id="confetti-holder"></canvas> <!-- Confetti canvas -->
     <div class="container">
         <h1 id="birthday-message">Happy Birthday, Nayu!</h1>
         <p class="subtext">Wishing you all the happiness in the world!</p>
         <button id="celebrate">Celebrate 🎉</button>
-        <div id="qr-code" class="hidden"></div> <!-- QR code container -->
+        <div id="qr-code" class="hidden">
+            <img src="qr-code-image.png" alt="QR Code" width="200" height="200">
+        </div> <!-- QR code container -->
     </div>
     
-    <script src="script.js"></script> <!-- Your main script -->
+    <script src="confetti.js"></script> <!-- Your custom confetti script -->
+    <script>
+        // Initialize the confetti
+        const confetti = new ConfettiGenerator({
+            target: 'confetti-holder',
+            max: 100, // Adjust max confetti pieces
+            size: 1,
+            animate: true,
+            respawn: true,
+            props: ['circle', 'square', 'triangle', 'line'],
+            colors: [
+                [165, 104, 246],
+                [230, 61, 135],
+                [0, 199, 228],
+                [253, 214, 126]
+            ],
+            clock: 25,
+            rotate: true,
+            start_from_edge: true,
+            width: window.innerWidth,
+            height: window.innerHeight
+        });
+
+        confetti.render(); // Start the confetti animation
+
+        // Show QR code when the button is clicked
+        document.getElementById("celebrate").addEventListener("click", function() {
+            const qrCode = document.getElementById("qr-code");
+            qrCode.classList.toggle("hidden"); // Toggle visibility of QR code
+        });
+    </script>
 </body>
 </html>
