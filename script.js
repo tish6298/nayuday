@@ -1,89 +1,29 @@
-// Initialize tsParticles
-tsParticles.load("tsparticles", {
-    preset: "confetti",
-    particles: {
-        number: {
-            value: 100,
-        },
-        shape: {
-            type: "circle",
-        },
-        opacity: {
-            value: 0.5,
-            random: true,
-            anim: {
-                enable: true,
-                speed: 1,
-                opacity_min: 0.1,
-            },
-        },
-        size: {
-            value: 10,
-            random: true,
-            anim: {
-                enable: true,
-                speed: 2,
-                size_min: 5,
-            },
-        },
-        line_linked: {
-            enable: false,
-        },
-        move: {
-            enable: true,
-            speed: 2,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: {
-                enable: false,
-                rotateX: 600,
-                rotateY: 1200,
-            },
-        },
-    },
-    interactivity: {
-        events: {
-            onhover: {
-                enable: true,
-                mode: "bubble",
-            },
-            onclick: {
-                enable: true,
-                mode: "push",
-            },
-            resize: true,
-        },
-        modes: {
-            bubble: {
-                distance: 250,
-                duration: 2,
-                size: 0,
-                opacity: 0,
-            },
-            push: {
-                particles_nb: 4,
-            },
-            repulse: {
-                particles_nb: 4,
-            },
-        },
-    },
-    retina_detect: true,
+// Initialize the confetti
+const confetti = new ConfettiGenerator({
+    target: 'confetti-holder',
+    max: 100, // Adjust max confetti pieces
+    size: 1,
+    animate: true,
+    respawn: true,
+    props: ['circle', 'square', 'triangle', 'line'], // Shapes of confetti
+    colors: [
+        [165, 104, 246], // Purple
+        [230, 61, 135],  // Pink
+        [0, 199, 228],   // Blue
+        [253, 214, 126]  // Yellow
+    ],
+    clock: 25, // Speed of confetti generation
+    rotate: true, // Allow confetti to rotate
+    start_from_edge: true, // Start confetti from edges
+    width: window.innerWidth, // Set canvas width
+    height: window.innerHeight // Set canvas height
 });
 
-// Show QR code on button click
-document.getElementById("celebrate").addEventListener("click", function () {
-    const qrCodeContainer = document.getElementById("qr-code");
-    qrCodeContainer.classList.remove("hidden");
+// Start the confetti animation
+confetti.render();
 
-    // Create and display the QR code image
-    const qrCodeImage = document.createElement("img");
-    qrCodeImage.src = "qr-code-image.png"; // Reference your QR code image
-    qrCodeImage.alt = "QR Code";
-    qrCodeImage.style.width = "150px"; // Set width for the image
-    qrCodeImage.style.height = "150px"; // Set height for the image
-    qrCodeContainer.appendChild(qrCodeImage);
+// Show QR code when the button is clicked
+document.getElementById("celebrate").addEventListener("click", function() {
+    const qrCode = document.getElementById("qr-code");
+    qrCode.classList.toggle("hidden"); // Toggle visibility of QR code
 });
