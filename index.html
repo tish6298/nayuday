@@ -48,35 +48,6 @@
     </div>
     
     <script src="confetti.js"></script> <!-- Your custom confetti script -->
-    <script>
-        // Initialize the confetti
-        const confetti = new ConfettiGenerator({
-            target: 'confetti-holder',
-            max: 100, // Adjust max confetti pieces
-            size: 1,
-            animate: true,
-            respawn: true,
-            props: ['circle', 'square', 'triangle', 'line'],
-            colors: [
-                [165, 104, 246],
-                [230, 61, 135],
-                [0, 199, 228],
-                [253, 214, 126]
-            ],
-            clock: 25,
-            rotate: true,
-            start_from_edge: true,
-            width: window.innerWidth,
-            height: window.innerHeight
-        });
-
-        confetti.render(); // Start the confetti animation
-
-        // Show QR code when the button is clicked
-        document.getElementById("celebrate").addEventListener("click", function() {
-            const qrCode = document.getElementById("qr-code");
-            qrCode.classList.toggle("hidden"); // Toggle visibility of QR code
-        });
-    </script>
+    <script src="script.js"></script> <!-- Link to the external script -->
 </body>
 </html>
