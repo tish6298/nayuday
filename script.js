@@ -1,11 +1,18 @@
-function showQRCode() {
-    // The path to your QR code image stored in the repository
-    let qrCodePath = "./qr-code-image.png"; // Replace with the exact file path of your QR code
+// script.js
 
-    // Display the QR code by creating an image element
-    let qrCodeDiv = document.getElementById('qr-code');
-    qrCodeDiv.innerHTML = `<img src="${qrCodePath}" alt="QR Code" width="150" height="150">`;
+function showQRCode() {
+    // Get the QR code container
+    const qrCodeContainer = document.getElementById('qr-code');
     
-    // Show the QR code if hidden
-    qrCodeDiv.classList.remove('hidden');
+    // Remove the 'hidden' class to display the QR code
+    qrCodeContainer.classList.remove('hidden');
+    
+    // Create an image element for the QR code
+    const qrCodeImage = document.createElement('img');
+    qrCodeImage.src = 'path/to/your-qr-code.png'; // Replace with the actual path to your QR code image
+    qrCodeImage.alt = 'QR Code for Nayu\'s birthday';
+    
+    // Clear any existing content in the QR code container and append the new image
+    qrCodeContainer.innerHTML = ''; // Clear previous content
+    qrCodeContainer.appendChild(qrCodeImage);
 }
