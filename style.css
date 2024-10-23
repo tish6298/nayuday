@@ -10,7 +10,8 @@ body {
     text-align: center; /* Center text inside the container */
     z-index: 1000; /* Ensure it appears above the confetti */
     padding: 20px; /* Add some padding */
-    color: white; /* Text color */
+    color: black; /* Change text color to black */
+    font-size: 24px; /* Increase font size */
 }
 
 .hidden {
@@ -21,9 +22,14 @@ body {
     margin-top: 20px; /* Space between button and QR code */
 }
 
+#qr-code img {
+    width: 300px; /* Increase QR code width */
+    height: 300px; /* Increase QR code height */
+}
+
 #celebrate {
-    padding: 10px 20px; /* Button padding */
-    font-size: 16px; /* Button font size */
+    padding: 15px 30px; /* Increase button padding */
+    font-size: 20px; /* Increase button font size */
     background-color: #4CAF50; /* Green background */
     color: white; /* White text */
     border: none; /* No border */
