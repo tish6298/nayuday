@@ -20,7 +20,7 @@ body {
     z-index: 1000; /* Ensure it appears above the confetti */
     padding: 20px; /* Add some padding */
     color: darkred; /* Change text color to dark red */
-    font-size: 68px; /* Double the font size */
+    font-size: 40px; /* Double the font size */
 }
 
 .hidden {
@@ -32,8 +32,8 @@ body {
 }
 
 #qr-code img {
-    width: 500px; /* Increase QR code width */
-    height: 500px; /* Increase QR code height */
+    width: 450px; /* Increase QR code width */
+    height:450px; /* Increase QR code height */
 }
 
 #celebrate {
